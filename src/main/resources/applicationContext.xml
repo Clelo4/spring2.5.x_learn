@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="helloWorld" class="org.example.HelloWorldService"/>
+
+  <bean id="messageProvider" class="org.example.MessageProvider" />
+
+  <bean id="messageService" class="org.example.MessageService">
+    <property name="message" value="Hello, Spring!"/>
+    <property name="provider" ref="messageProvider"/>
+  </bean>
+</beans>
