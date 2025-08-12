@@ -1,7 +1,10 @@
 package org.example;
 
+import com.sun.jmx.snmp.ThreadContext;
+import java.sql.DriverManager;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import sun.reflect.Reflection;
 
 public class Main {
 
@@ -22,5 +25,12 @@ public class Main {
     // Print Java jvm version
     String javaVersion = System.getProperty("java.version");
     System.out.println("Java version: " + javaVersion);
+
+    Object properties = System.getProperties();
+
+    Object a = ClassLoader.getSystemClassLoader();
+    Object classLoader = ApplicationContext.class.getClassLoader();
+
+    System.out.println("System properties: " + properties);
   }
 }
